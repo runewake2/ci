@@ -17,7 +17,7 @@ jobs:
       - name: Cluster Info
         run: |
           which kind
-          kind create cluster
+          kind create cluster --wait 300
           kubectl cluster-info
           kubectl get pods -n kube-system
       - name: Deploy a Pod
