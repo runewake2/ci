@@ -1,0 +1,22 @@
+name: "Create cluster using KinD"
+on:
+  - workflow_dispatch
+  - pull_request
+  - push
+
+jobs:
+  kind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: engineerd/setup-kind@aa272fe2a7309878ffc2a81c56cfe3ef108ae7d0 # v0.5.0
+        with:
+          version: "v0.9.0"
+      - name: Cluster Info
+        run: |
+          kubectl cluster-info
+          kubectl get pods -n kube-system
+      - name: Deploy a Pod
+        run: |
+          kubectl apply -f pod.yml
+          kubectl get po
