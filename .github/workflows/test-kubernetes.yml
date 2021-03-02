@@ -13,3 +13,9 @@ jobs:
       - name: First Step
         run: |
           echo "First!"
+  afterwards:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Last Step
+        run: |
+          echo "Last!"
