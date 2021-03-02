@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: First Step
         run: |
-          kind create cluster
+          kind --version
