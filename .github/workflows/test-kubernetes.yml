@@ -12,11 +12,4 @@ jobs:
     steps:
       - name: First Step
         run: |
-          echo "First!"
-  afterwards:
-    runs-on: ubuntu-latest
-    needs: kind
-    steps:
-      - name: Last Step
-        run: |
-          echo "Last!"
+          kind cluster create
