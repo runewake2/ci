@@ -13,10 +13,3 @@ jobs:
       - name: First Step
         run: |
           echo "First!"
-  echo:
-    runs-on: ubuntu-latest
-    needs: kind
-    steps:
-      - name: Echo
-        run: |
-          echo "Hello World After KinD"
