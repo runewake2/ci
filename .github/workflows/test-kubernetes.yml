@@ -27,3 +27,9 @@ jobs:
         run: |
           kubectl apply -f pod.yml
           kubectl get po
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo
+        run: |
+          echo "Hello World"
