@@ -10,26 +10,13 @@ jobs:
   kind:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      # Pinned to Commit to ensure action is consistent: https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#using-third-party-actions
-      # If you upgrade this version confirm the changes match your expectations
-      - uses: engineerd/setup-kind@aa272fe2a7309878ffc2a81c56cfe3ef108ae7d0 # v0.5.0
-        with:
-          version: "v0.9.0"
-          skipClusterCreation: true
-      - name: Cluster Info
+      - name: First Step
         run: |
-          which kind
-          kind create cluster --wait 300s
-          kubectl cluster-info
-          kubectl get pods -n kube-system
-      - name: Deploy a Pod
-        run: |
-          kubectl apply -f pod.yml
-          kubectl get po
+          echo "First!"
   echo:
     runs-on: ubuntu-latest
+    needs: kind
     steps:
       - name: Echo
         run: |
-          echo "Hello World"
+          echo "Hello World After KinD"
