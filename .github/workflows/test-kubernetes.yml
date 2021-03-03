@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: First Step
         run: |
-          gcloud components install kpt
+          sudo apt-get install google-cloud-sdk-kpt
           kpt --version
