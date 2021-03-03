@@ -13,4 +13,4 @@ jobs:
       - name: First Step
         run: |
           sudo apt-get install google-cloud-sdk-kpt
-          kpt --version
+          kpt version
